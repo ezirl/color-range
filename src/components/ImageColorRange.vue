@@ -34,7 +34,7 @@
           <div class="panel__palette__item" v-for="(i, k) in colors" v-bind:key="k">
             <div class="panel__palette__item__header">
               <div class="panel__palette__item__header__ctrl">
-                <button @click="remItem(k)"><font-awesome-icon :icon="trashIcon" /></button>
+                <button @click.prevent="remItem(k)"><font-awesome-icon :icon="trashIcon" /></button>
               </div>
             </div>
             <div class="panel__palette__item__pic">
@@ -258,8 +258,10 @@ h1
 
 
       &__header
+        z-index 999
         &__ctrl
-          float right
+          justify-content flex-end
+          display flex
           button
             font-size 16px
             border none
